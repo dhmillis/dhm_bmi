@@ -1,1 +1,204 @@
-index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Calculator">
+  <meta name="author" content="David H. Millis">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Calculator</h1>
+    <h2></h2>
+    <p>David H. Millis<br/>October 26, 2014</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Your BMI (Body Mass Index)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>BMI (body mass index) is a measure of body fat based on height and weight. The BMI Calculator calculates your body mass index using the following formula:</p>
+
+<p><b>\[BMI = \frac{(\mbox{weight in kg})}{(\mbox{height in meters})^2}\]</b></p>
+
+<p>An ideal BMI is in the range from 19.0 to 25.0. A BMI lower than 19.0 indicates that the individual is underweight. A BMI between  25.0 and 30.0 indicates that the individual is overweight. A BMI above 30.0 indicates obesity.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Sample BMI Calculation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Let&#39;s consider Steve, whose height is 5&#39;10&quot; and weight is 160 pounds. The BMI Calculator does the following calculations:</p>
+
+<pre><code class="r">num_feet &lt;- 5; num_inches &lt;- 10; num_weight_lb &lt;- 160
+
+num_height_inches &lt;- num_feet * 12 + num_inches
+num_height_meters &lt;- num_height_inches * 0.025
+num_weight_kg &lt;- num_weight_lb * 0.45
+num_bmi &lt;- num_weight_kg/num_height_meters^2
+
+print (num_bmi)
+</code></pre>
+
+<pre><code>## [1] 23.51
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>BMI Categories</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>BMI calculator now determines Steve&#39;s body fat category:</p>
+
+<pre><code class="r">num_bmi &lt;- 23.51
+str_bmi &lt;- format(num_bmi, digits=2, nsmall=2)
+
+if (num_bmi &lt; 19.0) 
+  { msg &lt;- &quot;Underweight&quot;
+} else if (num_bmi &gt;= 19.0 &amp;&amp; num_bmi &lt; 25.0) 
+  { msg &lt;- &quot;Ideal BMI&quot;
+} else if (num_bmi &gt;= 25.0 &amp;&amp; num_bmi &lt; 30.0) 
+  { msg &lt;- &quot;Overweight&quot;
+} else if (num_bmi &gt;= 30.0 &amp;&amp; num_bmi &lt; 34.5) 
+  { msg &lt;- &quot;Obese&quot;     
+}
+paste(str_bmi, &quot; &quot;, msg)
+</code></pre>
+
+<pre><code>## [1] &quot;23.51   Ideal BMI&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Using the BMI Calculator</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To use the BMI calculator, enter the following information:</p>
+
+<ul>
+<li>Enter your height, in feet and inches, using the two drop-down boxes.</li>
+<li>Enter your weight, in pounds, using the slider.</li>
+</ul>
+
+<p>The BMI calculator will manage the unit conversions, and will calculate your BMI.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Disclosure</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The calculation of body mass index is only an approximate measure of body fat. It is best to consult with a licensed health practitioner if you would like a more detailed evaluation of your nutritional status.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Your BMI (Body Mass Index)'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Sample BMI Calculation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='BMI Categories'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Using the BMI Calculator'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Disclosure'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
