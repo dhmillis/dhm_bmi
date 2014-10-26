@@ -12,7 +12,7 @@ knit        : slidify::knit2slides
 ---
 ## Your BMI (Body Mass Index)
 
-BMI (body mass index) is a measure of body fat based on height and weight. The BMI Calculator calculates your body mass index using the following formula:
+BMI (body mass index) is a measure of body fat based on height and weight. BMI Calculator calculates your body mass index using the following formula:
 
 <b>$$BMI = \frac{(\mbox{weight in kg})}{(\mbox{height in meters})^2}$$</b>
 
@@ -21,7 +21,7 @@ An ideal BMI is in the range from 19.0 to 25.0. A BMI lower than 19.0 indicates 
 ---
 ## Sample BMI Calculation
 
-Let's consider Steve, whose height is 5'10" and weight is 160 pounds. The BMI Calculator does the following calculations:
+Let's consider Steve, whose height is 5'10" and weight is 160 pounds. BMI Calculator does the following calculations:
 
 
 ```r
@@ -42,13 +42,11 @@ print (num_bmi)
 ---
 ## BMI Categories
 
-BMI calculator now determines Steve's body fat category:
+BMI Calculator now determines Steve's body fat category:
 
 
 ```r
-num_bmi <- 23.51
-str_bmi <- format(num_bmi, digits=2, nsmall=2)
-    
+num_bmi <- 23.51; str_bmi <- format(num_bmi, digits=2)  
 if (num_bmi < 19.0) 
   { msg <- "Underweight"
 } else if (num_bmi >= 19.0 && num_bmi < 25.0) 
@@ -56,26 +54,27 @@ if (num_bmi < 19.0)
 } else if (num_bmi >= 25.0 && num_bmi < 30.0) 
   { msg <- "Overweight"
 } else if (num_bmi >= 30.0 && num_bmi < 34.5) 
-  { msg <- "Obese"     
-}
+  { msg <- "Obese" }
 paste(str_bmi, " ", msg)
 ```
 
 ```
-## [1] "23.51   Ideal BMI"
+## [1] "24   Ideal BMI"
 ```
+So Steve has a normal BMI for his height.
 
 ---
-## Using the BMI Calculator
+## Using BMI Calculator
 
-To use the BMI calculator, enter the following information:
+To use BMI Calculator, enter the following information:
 
 - Enter your height, in feet and inches, using the two drop-down boxes.
 - Enter your weight, in pounds, using the slider.
 
-The BMI calculator will manage the unit conversions, and will calculate your BMI.
+BMI Calculator will manage the unit conversions, and will calculate your BMI.
 
----
-## Disclosure
+## Features of BMI Calculator
 
-The calculation of body mass index is only an approximate measure of body fat. It is best to consult with a licensed health practitioner if you would like a more detailed evaluation of your nutritional status.
+- Simple graphical interface.
+- Conversion of height and weight to metric values is done automatically.
+- Slider input for weight makes it easy to test different weight scenarios. You can quickly find a target weight that would move you from an undesirable BMI to a healthier BMI, just by moving the slider.
